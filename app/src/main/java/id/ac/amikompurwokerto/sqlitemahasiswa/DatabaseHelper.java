@@ -29,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d("Data", "onCreate: " + sql);
         db.execSQL(sql);
         sql = "INSERT INTO mahasiswa (nim, nama, alamat, jk, agama, tgl) " +
-                "VALUES ('17.12.0027', 'Desty Sandra Utami', 'Cilacap','Perempuan', 'Islam', '19 Desember 1997');";
+                "VALUES ('16.11.0247', 'Rafli Firdausy Irawan', 'Sokaraja','Laki-Laki', 'Islam', '31 Juli 1998');";
         db.execSQL(sql);
     }
 

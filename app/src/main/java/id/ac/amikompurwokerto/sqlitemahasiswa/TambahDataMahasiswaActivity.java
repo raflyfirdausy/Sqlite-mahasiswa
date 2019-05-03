@@ -135,29 +135,35 @@ public class TambahDataMahasiswaActivity extends AppCompatActivity {
             if (getIntent().hasExtra("nim")) {
                 update(db);
             } else {
-                tambah(db);
+
+                Cursor cur = db.rawQuery("SELECT COUNT(*) FROM mahasiswa where nim = '" + et_nim.getText().toString() + "'", null);
+                if (cur != null) {
+                    cur.moveToFirst();                       // Always one row returned.
+                    if (cur.getInt (0) == 0) {               // Zero count means empty table.
+                        tambah(db);
+                    } else {
+                        Toast.makeText(context, "Maaf Nim Sudah ada dalam Database !\nSilahkan Gunakan nim yang lain !", Toast.LENGTH_LONG).show();
+                    }
+                }
             }
         }
     }
 
     private void tambah(SQLiteDatabase db) {
-        Cursor cur = db.rawQuery("SELECT COUNT(*) FROM mahasiswa where nim = '" + et_nim.getText().toString() + "'", null);
-        if (cur != null) {
-            Toast.makeText(context, "Maaf Nim Sudah ada dalam Database !\nSilahkan Gunakan nim yang lain !", Toast.LENGTH_LONG).show();
-        } else {
-            String sql = "INSERT INTO mahasiswa (nim, nama, alamat, jk, agama, tgl) " +
-                    "VALUES ('" + et_nim.getText().toString() + "'," +
-                    "'" + et_nama.getText().toString() + "'," +
-                    "'" + et_alamat.getText().toString() + "'," +
-                    "'" + ((RadioButton) findViewById(rg_jenisKelamin.getCheckedRadioButtonId())).getText() + "'," +
-                    "'" + sp_agama.getSelectedItem().toString() + "'," +
-                    "'" + et_tanggalLahir.getText().toString() + "');";
-            db.execSQL(sql);
-            Toast.makeText(context, "Data Berhasil Di Tambah !", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(getApplicationContext(), TampilDataMahasiswaActivity.class);
-            startActivity(i);
-            finish();
-        }
+
+        String sql = "INSERT INTO mahasiswa (nim, nama, alamat, jk, agama, tgl) " +
+                "VALUES ('" + et_nim.getText().toString() + "'," +
+                "'" + et_nama.getText().toString() + "'," +
+                "'" + et_alamat.getText().toString() + "'," +
+                "'" + ((RadioButton) findViewById(rg_jenisKelamin.getCheckedRadioButtonId())).getText() + "'," +
+                "'" + sp_agama.getSelectedItem().toString() + "'," +
+                "'" + et_tanggalLahir.getText().toString() + "');";
+        db.execSQL(sql);
+        Toast.makeText(context, "Data Berhasil Di Tambah !", Toast.LENGTH_LONG).show();
+        Intent i = new Intent(getApplicationContext(), TampilDataMahasiswaActivity.class);
+        startActivity(i);
+        finish();
+
     }
 
     private void update(SQLiteDatabase db) {
@@ -177,7 +183,7 @@ public class TambahDataMahasiswaActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(getIntent().hasExtra("nim")){
+        if (getIntent().hasExtra("nim")) {
             Intent i = new Intent(getApplicationContext(), TampilDataMahasiswaActivity.class);
             startActivity(i);
         }
