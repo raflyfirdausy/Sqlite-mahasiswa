@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".TambahDataMahasiswaActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:text="SQLite Mahasiswa"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Tambah Data Mahasiswa"
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NIM" />
+
+            <EditText
+                android:id="@+id/et_nim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masukan NIM (contoh : 17.12.0027)" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama" />
+
+            <EditText
+                android:id="@+id/et_nama"
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masukan Nama (contoh : Desty Sandra U)" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alamat" />
+
+            <EditText
+                android:inputType="textPostalAddress"
+                android:id="@+id/et_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masukan Alamat " />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jenis Kelamin" />
+
+            <RadioGroup
+                android:id="@+id/rg_jenisKelamin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_laki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Laki Laki"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/rb_perempuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perempuan" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agama" />
+
+            <Spinner
+                android:id="@+id/sp_agama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tanggal Lahir" />
+
+            <EditText
+                android:id="@+id/et_tanggalLahir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="19 Desember 1999"
+                android:focusable="false"
+                android:inputType="date"/>
+
+            <Button
+                android:id="@+id/btn_tambah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Tambah"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/btn_keluar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
+                android:text="Keluar"
+                android:textColor="#fff" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

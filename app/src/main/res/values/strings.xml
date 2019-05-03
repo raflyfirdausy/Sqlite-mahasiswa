@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SQLiteMahasiswa</string>
+    <string name="title_activity_tambah_data">TambahDataActivity</string>
+
+    <string-array name="agama">
+        <item>Islam</item>
+        <item>Budha</item>
+        <item>katolik</item>
+        <item>Protestan</item>
+        <item>Hindu</item>
+        <item>Konghucu</item>
+        <item>Atheis :v</item>
+    </string-array>
+</resources>
