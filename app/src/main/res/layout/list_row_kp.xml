@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:padding="10dp"
+    android:id="@+id/parent">
+
+    <TextView
+        android:id="@+id/nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:fontFamily="monospace"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/nim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nim"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textStyle="normal"
+        android:fontFamily="monospace"
+        android:textSize="16sp"
+        android:layout_below="@+id/nama"/>
+
+    <TextView
+        android:id="@+id/prodi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prodi"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textStyle="normal"
+        android:fontFamily="monospace"
+        android:textSize="16sp"
+        android:layout_below="@+id/nim"/>
+
+    <TextView
+        android:id="@+id/matakuliah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mata Kuliah"
+        android:layout_gravity="end"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textStyle="normal"
+        android:fontFamily="monospace"
+        android:textSize="16sp"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/nilai_awal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nilai Awal"
+        android:layout_gravity="end"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textStyle="normal"
+        android:fontFamily="monospace"
+        android:textSize="16sp"
+        android:layout_below="@+id/matakuliah"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/nilai_akhir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nilai Akhir"
+        android:layout_gravity="end"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textStyle="normal"
+        android:fontFamily="monospace"
+        android:textSize="16sp"
+        android:layout_below="@+id/nilai_awal"
+        android:layout_alignParentEnd="true"/>
+
+
+</RelativeLayout>

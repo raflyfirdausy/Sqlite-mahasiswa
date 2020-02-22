@@ -41,14 +41,23 @@ public class TampilDataMahasiswaActivity extends AppCompatActivity {
         cursor.moveToFirst();
         for (int cc = 0; cc < cursor.getCount(); cc++) {
             cursor.moveToPosition(cc);
-            mahasiswaModel.add(new MahasiswaModel(
-                    cursor.getString(0),
-                    cursor.getString(1),
-                    cursor.getString(2),
-                    cursor.getString(3),
-                    cursor.getString(4),
-                    cursor.getString(5)
-            ));
+//            mahasiswaModel.add(new MahasiswaModel(
+//                    cursor.getString(0),
+//                    cursor.getString(1),
+//                    cursor.getString(2),
+//                    cursor.getString(3),
+//                    cursor.getString(4),
+//                    cursor.getString(5)
+//            ));
+            MahasiswaModel model = new MahasiswaModel();
+            model.setNim(cursor.getString(0));
+            model.setNama(cursor.getString(1));
+            model.setProdi(cursor.getString(2));
+            model.setMatakuliah(cursor.getString(3));
+            model.setNilai_awal(cursor.getString(4));
+            model.setNilai_akhir(cursor.getString(5));
+
+            mahasiswaModel.add(model);
         }
 
         adapter = new ListViewAdapter(mahasiswaModel, getApplicationContext());

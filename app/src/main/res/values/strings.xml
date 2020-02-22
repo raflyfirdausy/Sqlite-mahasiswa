@@ -11,4 +11,9 @@
         <item>Konghucu</item>
         <item>Atheis :v</item>
     </string-array>
+
+    <string-array name="prodi">
+        <item>Teknik Informatika</item>
+        <item>Sistem Informasi</item>
+    </string-array>
 </resources>
